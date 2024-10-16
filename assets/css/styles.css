@@ -21,7 +21,7 @@ display: flex;
 flex-flow: column;
 justify-content: center;
     background-color: var(--background-color);
-    background-image: url(Images/Web\ Background.png);
+    background-image: url("../images/Web\ Background.png");
     background-size:100%;
     background-attachment: fixed;
 padding: 0;
@@ -652,7 +652,7 @@ height: 150px;
 
 
 section.CornerTag{
-    background-image: url(Images/CornerTag.png);
+    background-image: url(../images//CornerTag.png);
     background-size: 65px;
     place-self: center;
     grid-row: 1;
@@ -701,63 +701,64 @@ section.Thumbnail{
 section.Style1:not(.DisplayGrid){
     background-size: 500px;
 
-    background-image: url(Images/Background\ 1.png);
+    background-image: url(../images//Background\ 1.png);
     
 }
 section.Style2:not(.DisplayGrid){
     background-size: 500px;
 
-    background-image: url(Images/Background\ 2.png);
+    background-image: url(../images//Background\ 2.png);
     
 }
 section.Style3:not(.DisplayGrid){
     background-size: 500px;
 
-    background-image: url(Images/Background\ 3.png);
+    background-image: url(../images//Background\ 3.png);
     
 }
 section.Style4:not(.DisplayGrid){
     background-size: 500px;
 
-    background-image: url(Images/Background\ 4.png);
+    background-image: url(../images//Background\ 4.png);
     
 }
 section.Style5:not(.DisplayGrid){
-    background-image: url(Images/Background\ 5.png);
+    background-image: url(../images//Background\ 5.png);
     background-size: 500px;
 }
 section.Style6:not(.DisplayGrid){
     background-size: 500px;
 
-    background-image: url(Images/Background\ 6.png);
+    background-image: url(../images//Background\ 6.png);
 }
 section.Style7:not(.DisplayGrid){
     background-size: 500px;
 
-    background-image: url(Images/Background\ 7.png);
+    background-image: url(../images//Background\ 7.png);
 }
 section.Style8:not(.DisplayGrid){
     background-size: 500px;
 
-    background-image: url(Images/Background\ 8.png);
+    background-image: url(../images//Background\ 8.png);
 }
+
 section.Style9:not(.DisplayGrid){
     background-size: 500px;
     background-position: center;
 
-    background-image: url(Images/Background\ 10.png);
+    background-image: url(../images//Background\ 10.png);
 }
 section.Style10:not(.DisplayGrid){
     background-size: 500px;
     background-position: center;
 
-    background-image: url(Images/Background\ 11.png);
+    background-image: url(../images//Background\ 11.png);
 }
 section.Style11:not(.DisplayGrid){
     background-size: 500px;
     background-position: center;
 
-    background-image: url(Images/Background\ 12.png);
+    background-image: url(../images//Background\ 12.png);
 }
 
 .Style2 .Thumbnail,.Style4 .Thumbnail{
