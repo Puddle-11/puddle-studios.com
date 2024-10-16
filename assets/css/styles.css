@@ -3,12 +3,12 @@ GENERAL
 =========================================================*/
 @font-face {
     font-family: Header-Font;
-    src: url(Fonts/Caseopia\ Demo.otf);
+    src: url(../fonts/Caseopia\ Demo.otf);
 
 }
 @font-face {
     font-family: Main-Font;
-    src: url(Fonts/BespokeSerif-Light.ttf);
+    src: url(../fonts/BespokeSerif-Light.ttf);
 }
 body
 {
@@ -52,6 +52,9 @@ section.Outline{
 }
 section.NoBorder{
     border-radius: 0;
+}
+.background{
+    background-color: var(--background-color);
 }
 img{
     max-width: 100%;
@@ -223,6 +226,13 @@ CrossBar
     outline: none;
     font-size: 100px;
 }
+.second-title{
+    font-family: header-font;
+
+    grid-column: span 4;
+    outline: none;
+    font-size: 75px;
+}
 .CrossBar{
     display: grid;
 row-gap: 40px;
@@ -367,34 +377,114 @@ grid-column: span 4;
     column-gap: 1.5%;
     row-gap: 1.5%;
 }
-.DisplayGrid.Style1{
+.DisplayGrid.Style1, .DisplayGrid.Style2{
     padding: 1%;
     margin: 1%;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column: span 1;
-    width: 100%;
     height: 440px;
     background-color: transparent;
+    grid-column: span 1;
+    overflow: hidden;
 
 }
 
+.DisplayGrid.Style1{
+    width: 100%;
 
-.DisplayGrid.Style1.span-two
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.DisplayGrid.Style2{
+    width: 90%;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+
+
+
+
+.DisplayGrid.Style1.span-one, .DisplayGrid.Style2.span-one
+{
+    grid-template-columns: repeat(1, 1fr);
+    grid-column: span 1;
+}
+.DisplayGrid.Style2.span-one{grid-template-columns: repeat(2, 1fr);}
+.DisplayGrid.Style1.span-one{grid-template-columns: repeat(1, 1fr);}
+
+
+.DisplayGrid.Style1.span-two, .DisplayGrid.Style2.span-two
 {
     grid-template-columns: repeat(2, 1fr);
     grid-column: span 2;
 }
-.DisplayGrid.Style1.span-three
+.DisplayGrid.Style2.span-two{grid-template-columns: repeat(4, 1fr);}
+.DisplayGrid.Style1.span-two{grid-template-columns: repeat(2, 1fr);}
+
+.DisplayGrid.Style1.span-three, .DisplayGrid.Style2.span-three
 {
     grid-template-columns: repeat(3, 1fr);
     grid-column: span 3;
 }
-.DisplayGrid.Style1.span-four
+.DisplayGrid.Style2.span-three{grid-template-columns: repeat(6, 1fr);}
+.DisplayGrid.Style1.span-three{grid-template-columns: repeat(3, 1fr);}
+
+.DisplayGrid.Style1.span-four, .DisplayGrid.Style2.span-four
 {
     grid-template-columns: repeat(4, 1fr);
     grid-column: span 4;
 }
+.DisplayGrid.Style2.span-four{grid-template-columns: repeat(8, 1fr);}
+.DisplayGrid.Style1.span-four{grid-template-columns: repeat(4, 1fr);}
+
+
+
+
+.DisplayGrid.Style1.span-one-vert, .DisplayGrid.Style2.span-one-vert
+{
+    grid-row: span 1;
+    height: 220px;
+}
+
+
+.DisplayGrid.Style2.span-one-vert{grid-template-rows: repeat(2, 1fr);}
+.DisplayGrid.Style1.span-one-vert{grid-template-rows: repeat(1, 1fr);}
+
+
+
+.DisplayGrid.Style1.span-two-vert, .DisplayGrid.Style2.span-two-vert
+{
+    grid-row: span 2;
+    height: 440px;
+}
+.DisplayGrid.Style2.span-two-vert{grid-template-rows: repeat(4, 1fr);}
+.DisplayGrid.Style1.span-two-vert{grid-template-rows: repeat(2, 1fr);}
+
+.DisplayGrid.Style1.span-three-vert, .DisplayGrid.Style2.span-three-vert
+{
+    grid-template-rows: repeat(3, 1fr);
+    grid-row: span 3;
+    height: 660px;
+
+}
+.DisplayGrid.Style2.span-three-vert{grid-template-rows: repeat(6, 1fr);}
+.DisplayGrid.Style1.span-three-vert{grid-template-rows: repeat(3, 1fr);}
+
+.DisplayGrid.Style1.span-four-vert, .DisplayGrid.Style2.span-four-vert
+{
+    grid-template-rows: repeat(4, 1fr);
+    grid-row: span 4;
+    height: 880px;
+
+}
+.DisplayGrid.Style2.span-four-vert{grid-template-rows: repeat(8, 1fr);}
+.DisplayGrid.Style1.span-four-vert{grid-template-rows: repeat(4, 1fr);}
+
+
+
+
+
+
 
 
 
@@ -402,7 +492,7 @@ grid-column: span 4;
     
     box-sizing: border-box;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     padding: 1%;
     margin: 1%;
     height: 300px;
@@ -543,6 +633,10 @@ a.fill-div {
         width: 860px;
 
     }
+    .display-box.span-five{
+        width: 180px;
+
+    }
     .text-box{
         display: inline;
         word-break: break-all;
@@ -550,7 +644,7 @@ a.fill-div {
         box-sizing: border-box;
         padding: 10px;
         width: 100%;
-        height: 235px;
+        height: 1fr;
         overflow: hidden;
     }
     .b1{
@@ -581,6 +675,10 @@ a.fill-div {
     }.span-four{
         grid-column: span 4;
     }
+.hide-overflow{
+    overflow: hidden;
+
+}
 
 
     .span-one-vert{
@@ -595,6 +693,10 @@ a.fill-div {
     
     }.span-four-vert{
         grid-row: span 4;
+    }
+    .span-five-vert{
+        grid-row: span 5;
+
     }
     .fill{
         height: 100%;
