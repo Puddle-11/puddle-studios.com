@@ -1,0 +1,771 @@
+/*=========================================================
+GENERAL
+=========================================================*/
+@font-face {
+    font-family: Header-Font;
+    src: url(Fonts/Caseopia\ Demo.otf);
+
+}
+@font-face {
+    font-family: Main-Font;
+    src: url(Fonts/BespokeSerif-Light.ttf);
+}
+body
+{
+    --background-color: #0a0c14;
+    --background-color2: #0f1320;
+    --primary-color: #e3a572;
+    --primary-color2: #d29869;
+gap: 10px;
+display: flex;
+flex-flow: column;
+justify-content: center;
+    background-color: var(--background-color);
+    background-image: url(Images/Web\ Background.png);
+    background-size:100%;
+    background-attachment: fixed;
+padding: 0;
+font-size: 24px;
+
+font-family: Main-Font;
+color: var(--primary-color2);
+align-items: center;
+margin: 0;
+}
+a{
+    color: var(--primary-color2);
+    text-decoration: none;
+
+}
+a:hover{
+    color: var(--primary-color);
+}
+section
+{
+    outline: solid var(--primary-color2) 1px;
+}
+section.NoOutline{
+    outline: none;
+}
+section.Outline{
+    outline: solid var(--primary-color2) 1px;
+}
+section.NoBorder{
+    border-radius: 0;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+}
+.align-center{
+    text-align: center;
+}
+.align-left{
+    text-align: left;
+}
+
+.home-link{
+    display: block;
+width: 40px;
+height: 40px;
+}
+
+
+/*=========================================================
+HEADER
+=========================================================*/
+
+header
+{
+display: flex;
+    align-items: center;
+    background-size: contain;
+        overflow: visible;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60px;
+    width: 100%;
+ margin: 0 0 20px 0;
+    box-shadow: 0 1px 0 rgb(212, 139, 99);
+    display: flex;
+
+vertical-align: middle;
+}
+/*=========================================================
+HEADER BUTTONS
+=========================================================*/
+
+header section{
+    font-family: header-font;
+
+    display: flex;
+    outline: none;
+    height: 40px;
+    font-size: 30px;
+    align-items: center;
+}
+@media(max-width: 800px) {
+    header section.HeaderButton{
+
+        margin: 0;
+        width: 0;
+     font-size: 0px;
+        }
+}
+@media(min-width: 800px) {
+    header section.HeaderButton{
+        outline: none;
+
+    margin: 30px;
+    width: 170px;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 25px;
+    }
+}
+
+
+header section:first-child:not(.MenuMoon){
+    margin: 0 0 0 50px;
+}
+
+header section:last-child:not(.MenuMoon){
+    margin: 0 50px 0 0;
+}
+.transparent{
+    background-color: white;
+}
+/*=========================================================
+HOME BUTTON MOON
+=========================================================*/
+
+header section.MenuWrapper{
+    display: flex;
+    justify-content: center;
+    min-width: 160px;
+    width: 40px;
+overflow: visible;
+    margin: auto;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.MenuMoon {
+    overflow: visible;
+    width: 40px;
+    outline: none;
+    position: absolute;
+    transition: 0.2s all;
+    transition-delay: 30ms;
+    pointer-events: none;
+    z-index: -1;
+  }
+  .MenuMoon.Moon1{
+    z-index: 1;
+  }
+.MenuWrapper:hover .Moon2,.MenuWrapper:hover .Moon3{
+    opacity: 70%;
+}
+.MenuWrapper:hover .Moon4,.MenuWrapper:hover .Moon5{
+    opacity: 20%;
+}
+.MenuWrapper:hover .Moon2{
+    transform: translateX(30px);
+}
+.MenuWrapper:hover .Moon3{
+    transform: translateX(-30px);
+}
+.MenuWrapper:hover .Moon4{
+    transform: translateX(55px);
+}
+.MenuWrapper:hover .Moon5{
+    transform: translateX(-55px);
+}
+
+/*=========================================================
+GLOBAL GRID
+=========================================================*/
+.GridWrapper{
+
+    flex-flow: column;
+    gap: 10px;
+    overflow: visible;
+    outline: 1px;
+}
+.GlobalGrid{
+    row-gap: 0px;
+    align-self: center;
+    outline: none;
+    place-items: center;
+    display: grid;
+    place-self: center;
+    grid-template-columns: repeat(4, 220px);
+    grid-template-rows: repeat(8, auto);
+    width: 100%;
+}
+
+/*=========================================================
+DISPLAY GRIDS
+=========================================================*/
+/*-----------------------
+CrossBar
+-----------------------*/
+.main-title{
+    font-family: header-font;
+
+    grid-column: span 4;
+    outline: none;
+    font-size: 100px;
+}
+.CrossBar{
+    display: grid;
+row-gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 400px 1fr;
+
+    width: 100%;
+    height: 100%;
+    grid-column: span 4;
+}
+.section-divider{
+    grid-column: span 4;
+    outline: none;
+    width: 100%;
+    height: 1px;
+    grid-column: span 4;
+box-shadow: 0px -2px 0px rgb(212, 139, 99);
+}
+.section-divider.no-line{
+    height: 100px;
+
+    box-shadow: none;
+}
+.section-divider.no-line.small{
+    height: 50px;
+
+    box-shadow: none;
+}
+.section-divider.no-line.micro{
+    height: 20px;
+    box-shadow: none;
+}
+.section-divider.no-line.large{
+    height: 150px;
+    box-shadow: none;
+}
+/*-----------------------*/
+
+.hero{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column: span 4;
+    width: 100%;
+    height: 440;
+    outline: none;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hero-card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+    border-radius: 130px 130px 0 0;
+}
+
+ .hero-card section{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.hero-card .hero-card-cover{
+    transition: 600ms;
+    z-index: 1;
+}
+ .hero-card, .hero .hero-card-cover{
+    margin: 0 auto 0 auto;
+    width: 260px;
+    height: 440px;
+}
+.hero-card:hover .hero-card-cover{
+   transform:translate(0, -100%);
+}
+
+
+
+.hover-card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+}
+
+ .hover-card section{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.hover-card .hover-card-cover{
+    transition: 500ms;
+    z-index: 1;
+    border-radius:  0px;
+}
+ .hover-card{
+    margin: 0 auto 0 auto;
+
+}
+.hover-card:hover .hover-card-cover{
+   transform:translate(0, -101%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Seperator{
+    display: inline-grid;
+    background-color: var(--primary-color);
+height: 600px;
+width: 100%;
+grid-column: span 4;
+}
+
+.DisplayGrid{
+    display: inline-grid;
+    overflow: hidden;
+    background-color: var(--background-color);
+    height: 440px;
+    padding: 0px;
+    margin: 0px;
+    column-gap: 1.5%;
+    row-gap: 1.5%;
+}
+.DisplayGrid.Style1{
+    padding: 1%;
+    margin: 1%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: span 1;
+    width: 100%;
+    height: 440px;
+    background-color: transparent;
+
+}
+
+
+.DisplayGrid.Style1.span-two
+{
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: span 2;
+}
+.DisplayGrid.Style1.span-three
+{
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: span 3;
+}
+.DisplayGrid.Style1.span-four
+{
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: span 4;
+}
+
+
+
+.DisplayGrid.Style6{
+    
+    box-sizing: border-box;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 1%;
+    margin: 1%;
+    height: 300px;
+    width: 100%;
+    grid-column: span 4;
+    background-color: transparent;
+}
+.DisplayGrid.Style6.small{
+    
+
+    height: 150px;
+}
+.DisplayGrid.Style1 section{
+overflow: hidden;
+
+
+}
+
+
+
+
+
+
+/*-----------------------
+DisplayGrid Wrappers
+-----------------------*/
+.LeftWrapper{
+    display: flex;
+    width: 100%;
+    justify-content: left;
+}
+
+.RightWrapper{
+    display: flex;
+    width: 100%;
+    justify-content: right;
+}
+
+/*=========================================================
+DISPLAY GRID COMPONENTS
+=========================================================*/
+/*-----------------------
+CrossBar
+-----------------------*/
+
+
+
+
+
+
+
+.CrossBarSection{
+    height: 50px;
+    margin: auto;
+    width: 100%;
+}
+.CrossBar .CrossBarSection:not(.ScrollWrapper){
+    height: 50px;
+    margin: auto;
+    width: 100%;
+}
+ .CrossBar section:last-child:not(.Card){
+    border-radius: 0 0 30px 30px;
+}
+
+.CrossBar section:first-child:not(.Card){
+    border-radius: 30px 30px 0 0;
+}
+
+.CrossBarSection{
+    grid-column: span 4;
+}
+
+
+.CrossBarSection.ScrollWrapper
+{
+    height: 100%;
+    grid-column: span 4;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+        display: none;
+      }
+    .Card{
+        opacity: 70%;
+        overflow: hidden;
+        margin: 10px;
+        flex: 0 0 auto;
+        transition-property: all;
+        transition-duration: 100ms;
+    }
+    .Card:hover{
+        opacity: 100%;
+        outline-width: 3px;
+    }
+}
+
+.ScrollButtonB:hover{
+outline-width: 3px;
+}
+.ScrollButtonF:hover{
+    outline-width: 3px;
+}
+/*-----------------------*/
+
+a.fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+
+
+
+
+   
+
+
+
+
+    .display-box{
+        width: 200px;
+        height: 235px;
+        overflow: hidden;
+
+    }
+    .display-box.span-two{
+        width: 420px;
+
+    }
+    .display-box.span-three{
+        width: 640px;
+
+    }
+    .display-box.span-four{
+        width: 860px;
+
+    }
+    .text-box{
+        display: inline;
+        word-break: break-all;
+        font-style: italic;
+        box-sizing: border-box;
+        padding: 10px;
+        width: 100%;
+        height: 235px;
+        overflow: hidden;
+    }
+    .b1{
+        border-top-left-radius: 110px;
+    }
+    .b2{
+        border-top-right-radius: 110px;
+
+    }
+    .b3{
+        border-bottom-right-radius: 110px;
+
+    }
+    .b4{
+        border-bottom-left-radius: 110px;
+
+    }
+    .span-one{
+        grid-column: span 1;
+    
+    }
+    .span-two{
+        grid-column: span 2;
+    
+    }.span-three{
+        grid-column: span 3;
+    
+    }.span-four{
+        grid-column: span 4;
+    }
+
+
+    .span-one-vert{
+        grid-row: span 1;
+    
+    }
+    .span-two-vert{
+        grid-row: span 2;
+    
+    }.span-three-vert{
+        grid-row: span 3;
+    
+    }.span-four-vert{
+        grid-row: span 4;
+    }
+    .fill{
+        height: 100%;
+    }
+    .large{
+height: 450px;
+    }
+    .small{
+height: 150px;
+    }
+    .micro{
+        height: 65px;
+    }
+    .text-headerS1{
+        text-align: center;
+
+        font-weight: bold;
+        font-family: Header-Font;
+        font-size: 45px;
+        color: var(--primary-color);
+    }
+    
+    .text-headerS2{
+        
+        text-align: center;
+
+        font-size: 33px;
+
+        color: var(--primary-color);
+    }
+    .text-footer{
+      
+        text-align: center;
+
+        font-size: 15px;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section.CornerTag{
+    background-image: url(Images/CornerTag.png);
+    background-size: 65px;
+    place-self: center;
+    grid-row: 1;
+    grid-column: 5;
+    width: 65px;
+    height: 105px;
+    z-index: 1;
+    background-color: var(--background-color);
+    }
+/*=========================================================
+SIDE BAR PARENTS
+=========================================================*/
+
+
+
+
+
+
+
+
+/*=========================================================
+SIDE BAR COMPONENTS
+=========================================================*/
+section.SideBar section{
+overflow: hidden;
+height: 100%;
+width: 100%;
+background-color: rgb(0, 0, 0, 0);
+}
+section.DoubleRow{
+    grid-row: span 2;
+}
+section.DoubleColumn{
+    grid-column: span 2;
+}
+
+/*=========================================================
+THUMBNAILS
+=========================================================*/
+section.Thumbnail{
+    
+    display: inline-block;
+    background-size: 600px;
+    background-position: center;
+}
+section.Style1:not(.DisplayGrid){
+    background-size: 500px;
+
+    background-image: url(Images/Background\ 1.png);
+    
+}
+section.Style2:not(.DisplayGrid){
+    background-size: 500px;
+
+    background-image: url(Images/Background\ 2.png);
+    
+}
+section.Style3:not(.DisplayGrid){
+    background-size: 500px;
+
+    background-image: url(Images/Background\ 3.png);
+    
+}
+section.Style4:not(.DisplayGrid){
+    background-size: 500px;
+
+    background-image: url(Images/Background\ 4.png);
+    
+}
+section.Style5:not(.DisplayGrid){
+    background-image: url(Images/Background\ 5.png);
+    background-size: 500px;
+}
+section.Style6:not(.DisplayGrid){
+    background-size: 500px;
+
+    background-image: url(Images/Background\ 6.png);
+}
+section.Style7:not(.DisplayGrid){
+    background-size: 500px;
+
+    background-image: url(Images/Background\ 7.png);
+}
+section.Style8:not(.DisplayGrid){
+    background-size: 500px;
+
+    background-image: url(Images/Background\ 8.png);
+}
+section.Style9:not(.DisplayGrid){
+    background-size: 500px;
+    background-position: center;
+
+    background-image: url(Images/Background\ 10.png);
+}
+section.Style10:not(.DisplayGrid){
+    background-size: 500px;
+    background-position: center;
+
+    background-image: url(Images/Background\ 11.png);
+}
+section.Style11:not(.DisplayGrid){
+    background-size: 500px;
+    background-position: center;
+
+    background-image: url(Images/Background\ 12.png);
+}
+
+.Style2 .Thumbnail,.Style4 .Thumbnail{
+    background-size: 100%;
+    grid-column: 1;
+    object-fit: cover;
+    overflow: hidden;
+}
+.Style2 .Thumbnail:hover,.Style4 .Thumbnail:hover{
+    outline-width: 3px;
+}
