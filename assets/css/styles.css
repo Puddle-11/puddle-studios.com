@@ -40,17 +40,17 @@ a{
 a:hover{
     color: var(--primary-color);
 }
-section
+section, .pseudo-section
 {
     outline: solid var(--primary-color2) 1px;
 }
-section.NoOutline{
+section.NoOutline, .pseudo-section.NoOutline{
     outline: none;
 }
-section.Outline{
+section.Outline, .pseudo-section.Outline{
     outline: solid var(--primary-color2) 1px;
 }
-section.NoBorder{
+section.NoBorder, .pseudo-section{
     border-radius: 0;
 }
 .background{
@@ -114,7 +114,7 @@ header section{
     align-items: center;
 }
 @media(max-width: 800px) {
-    header section.HeaderButton{
+    header section.HeaderButton, header .pseudo-section.HeaderButton{
 
         margin: 0;
         width: 0;
@@ -122,7 +122,7 @@ header section{
         }
 }
 @media(min-width: 800px) {
-    header section.HeaderButton{
+    header section.HeaderButton, header .pseudo-section.HeaderButton{
         outline: none;
 
     margin: 30px;
@@ -134,11 +134,11 @@ header section{
 }
 
 
-header section:first-child:not(.MenuMoon){
+header section:first-child:not(.MenuMoon), header .pseudo-section:first-child:not(.MenuMoon){
     margin: 0 0 0 50px;
 }
 
-header section:last-child:not(.MenuMoon){
+header section:last-child:not(.MenuMoon), header .pseudo-section:last-child:not(.MenuMoon){
     margin: 0 50px 0 0;
 }
 .transparent{
@@ -148,7 +148,7 @@ header section:last-child:not(.MenuMoon){
 HOME BUTTON MOON
 =========================================================*/
 
-header section.MenuWrapper{
+header section.MenuWrapper, header .pseudo-section.MenuWrapper{
     display: flex;
     justify-content: center;
     min-width: 160px;
@@ -293,7 +293,7 @@ box-shadow: 0px -2px 0px rgb(212, 139, 99);
     border-radius: 130px 130px 0 0;
 }
 
- .hero-card section{
+ .hero-card section, .hero-card .pseudo-section{
     grid-row: 1;
     grid-column: 1;
 }
@@ -309,20 +309,24 @@ box-shadow: 0px -2px 0px rgb(212, 139, 99);
         display: none;
     }
 } 
-@media (pointer: coarse) { 
+@media (pointer: coarse) 
+{ 
 
      .hero-card-cover{
         display: none;
     }
 } 
-.hero-card, .hero .hero-card-cover{
+
+.hero-card, .hero .hero-card-cover
+{
    margin: 0 auto 0 auto;
    width: 260px;
     height: 440px;
 }
 
 
-.hero-card:hover .hero-card-cover{
+.hero-card:hover .hero-card-cover
+{
    transform:translate(0, -100%);
 }
 
@@ -335,7 +339,7 @@ box-shadow: 0px -2px 0px rgb(212, 139, 99);
     overflow: hidden;
 }
 
- .hover-card section{
+ .hover-card section, .hover-card .pseudo-section{
     grid-row: 1;
     grid-column: 1;
 }
@@ -351,9 +355,6 @@ box-shadow: 0px -2px 0px rgb(212, 139, 99);
         display: none;
     }
 } 
-
-
-
     .hover-card .hover-card-cover{
         transition: 500ms;
         z-index: 1;
@@ -369,8 +370,62 @@ box-shadow: 0px -2px 0px rgb(212, 139, 99);
 .hover-card:hover .hover-card-cover{
    transform:translate(0, -101%);
 }
+@media(pointer: coarse){
+    .clickable
+    {
+        outline: solid var(--primary-color) 4px;
 
+    }
+}
+@media(pointer: none){
 
+    .clickable
+    {
+        outline: solid var(--primary-color) 4px;
+
+    }
+}
+
+.clickable{
+    transition-duration: 5ms;
+}
+.clickable:hover{
+    outline: solid var(--primary-color) 4px;
+}
+
+@media(pointer: fine){
+
+    .mobile-exclusive{
+        display: none;
+
+    }
+    .text-box.mobile-exclusive{
+        display: none;
+
+    }
+}
+@media(pointer: coarse){
+
+    .desktop-exclusive{
+        display: none;
+
+    }
+    .text-box.desktop-exclusive{
+        display: none;
+
+    }
+}
+@media(pointer: none){
+
+    .desktop-exclusive{
+        display: none;
+
+    }
+    .text-box.desktop-exclusive{
+        display: none;
+
+    }
+}
 
 
 
@@ -538,10 +593,8 @@ grid-column: span 4;
 
     height: 150px;
 }
-.DisplayGrid.Style1 section{
+.DisplayGrid.Style1 section, .DisplayGrid.Style1 .pseudo-section{
 overflow: hidden;
-
-
 }
 
 
@@ -587,11 +640,11 @@ CrossBar
     margin: auto;
     width: 100%;
 }
- .CrossBar section:last-child:not(.Card){
+ .CrossBar section:last-child:not(.Card), .CrossBar .pseudo-section:last-child:not(.Card) {
     border-radius: 0 0 30px 30px;
 }
 
-.CrossBar section:first-child:not(.Card){
+.CrossBar section:first-child:not(.Card), .CrossBar .pseudo-section:first-child:not(.Card){
     border-radius: 30px 30px 0 0;
 }
 
@@ -670,6 +723,8 @@ a.fill-div {
         width: 180px;
 
     }
+  
+
     .text-box{
         display: inline;
         word-break: break-all;
@@ -680,6 +735,8 @@ a.fill-div {
         height: 1fr;
         overflow: hidden;
     }
+
+
     .b1{
         border-top-left-radius: 110px;
     }
@@ -786,7 +843,7 @@ height: 150px;
 
 
 
-section.CornerTag{
+.CornerTag{
     background-image: url(../images//CornerTag.png);
     background-size: 65px;
     place-self: center;
@@ -811,85 +868,85 @@ SIDE BAR PARENTS
 /*=========================================================
 SIDE BAR COMPONENTS
 =========================================================*/
-section.SideBar section{
+.SideBar section, .SideBar .pseudo-section{
 overflow: hidden;
 height: 100%;
 width: 100%;
 background-color: rgb(0, 0, 0, 0);
 }
-section.DoubleRow{
+.DoubleRow{
     grid-row: span 2;
 }
-section.DoubleColumn{
+.DoubleColumn{
     grid-column: span 2;
 }
 
 /*=========================================================
 THUMBNAILS
 =========================================================*/
-section.Thumbnail{
+.Thumbnail{
     
     display: inline-block;
     background-size: 600px;
     background-position: center;
 }
-section.Style1:not(.DisplayGrid){
+.Style1:not(.DisplayGrid){
     background-size: 500px;
 
     background-image: url(../images//Background\ 1.png);
     
 }
-section.Style2:not(.DisplayGrid){
+.Style2:not(.DisplayGrid){
     background-size: 500px;
 
     background-image: url(../images//Background\ 2.png);
     
 }
-section.Style3:not(.DisplayGrid){
+.Style3:not(.DisplayGrid){
     background-size: 500px;
 
     background-image: url(../images//Background\ 3.png);
     
 }
-section.Style4:not(.DisplayGrid){
+.Style4:not(.DisplayGrid){
     background-size: 500px;
 
     background-image: url(../images//Background\ 4.png);
     
 }
-section.Style5:not(.DisplayGrid){
+.Style5:not(.DisplayGrid){
     background-image: url(../images//Background\ 5.png);
     background-size: 500px;
 }
-section.Style6:not(.DisplayGrid){
+.Style6:not(.DisplayGrid){
     background-size: 500px;
 
     background-image: url(../images//Background\ 6.png);
 }
-section.Style7:not(.DisplayGrid){
+.Style7:not(.DisplayGrid){
     background-size: 500px;
 
     background-image: url(../images//Background\ 7.png);
 }
-section.Style8:not(.DisplayGrid){
+.Style8:not(.DisplayGrid){
     background-size: 500px;
 
     background-image: url(../images//Background\ 8.png);
 }
 
-section.Style9:not(.DisplayGrid){
+.Style9:not(.DisplayGrid){
     background-size: 500px;
     background-position: center;
 
     background-image: url(../images//Background\ 10.png);
 }
-section.Style10:not(.DisplayGrid){
+.Style10:not(.DisplayGrid){
     background-size: 500px;
     background-position: center;
 
     background-image: url(../images//Background\ 11.png);
 }
-section.Style11:not(.DisplayGrid){
+.Style11:not(.DisplayGrid){
     background-size: 500px;
     background-position: center;
 
