@@ -40,9 +40,13 @@ a{
 a:hover{
     color: var(--primary-color);
 }
-section, .pseudo-section
+section
 {
     outline: solid var(--primary-color2) 1px;
+}
+.pseudo-section{
+    outline: solid var(--primary-color2) 1px;
+
 }
 section.NoOutline, .pseudo-section.NoOutline{
     outline: none;
@@ -231,7 +235,6 @@ CrossBar
 
     grid-column: span 4;
     outline: none;
-    text-align: left;
     font-size: 75px;
 }
 .CrossBar{
@@ -701,6 +704,7 @@ a.fill-div {
 
 
 
+
     .display-box{
         width: 200px;
         height: 235px;
@@ -709,7 +713,6 @@ a.fill-div {
     }
     .display-box.span-two{
         width: 420px;
-
     }
     .display-box.span-three{
         width: 640px;
@@ -723,11 +726,11 @@ a.fill-div {
         width: 180px;
 
     }
-  
+   
 
     .text-box{
         display: inline;
-        word-break: break-all;
+        word-break:keep-all;
         font-style: italic;
         box-sizing: border-box;
         padding: 10px;
@@ -765,6 +768,14 @@ a.fill-div {
     }.span-four{
         grid-column: span 4;
     }
+    .span-five{
+        grid-column: span 5;
+
+    }
+    .span-six{
+        grid-column: span 6;
+
+    }
 .hide-overflow{
     overflow: hidden;
 
@@ -792,7 +803,7 @@ a.fill-div {
         height: 100%;
     }
     .large{
-height: 450px;
+    height: 450px;
     }
     .small{
 height: 150px;
@@ -801,7 +812,6 @@ height: 150px;
         height: 65px;
     }
     .text-headerS1{
-        text-align: center;
 
         font-weight: bold;
         font-family: Header-Font;
@@ -811,7 +821,6 @@ height: 150px;
     
     .text-headerS2{
         
-        text-align: center;
 
         font-size: 33px;
 
@@ -819,7 +828,6 @@ height: 150px;
     }
     .text-footer{
       
-        text-align: center;
 
         font-size: 15px;
 
@@ -965,7 +973,7 @@ THUMBNAILS
 
 #preloader{
     background: var(--background-color) url(../images/output-onlinegiftools.gif) no-repeat center center;
-    background-size:  8%;
+    background-size: 20%;
     position: absolute;
  
     width: 100vw;
