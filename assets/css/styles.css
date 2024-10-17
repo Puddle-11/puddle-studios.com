@@ -6,61 +6,67 @@ GENERAL
     src: url(../fonts/Caseopia\ Demo.otf);
 
 }
+
 @font-face {
     font-family: Main-Font;
     src: url(../fonts/BespokeSerif-Light.ttf);
 }
-body
-{
+
+body {
     --background-color: #0a0c14;
     --background-color2: #0f1320;
     --primary-color: #e3a572;
     --primary-color2: #d29869;
-gap: 10px;
-display: flex;
-flex-flow: column;
-justify-content: center;
+    gap: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
     background-color: var(--background-color);
     background-image: url("../images/Web\ Background.png");
-    background-size:100%;
+    background-size: 100%;
     background-attachment: fixed;
-padding: 0;
-font-size: 24px;
+    padding: 0;
+    font-size: 24px;
 
-font-family: Main-Font;
-color: var(--primary-color2);
-align-items: center;
-margin: 0;
+    font-family: Main-Font;
+    color: var(--primary-color2);
+    align-items: center;
+    margin: 0;
 }
-a{
+
+a {
     color: var(--primary-color2);
     text-decoration: none;
 
 }
-a:hover{
+
+a:hover {
     color: var(--primary-color);
 }
-section
-{
+
+
+
+
+section {
     outline: solid var(--primary-color2) 1px;
 }
-.pseudo-section{
+
+.pseudo-section {
     outline: solid var(--primary-color2) 1px;
 
 }
-section.NoOutline, .pseudo-section.NoOutline{
+
+.no-outline
+{
     outline: none;
 }
-section.Outline, .pseudo-section.Outline{
+
+.solid-outline {
     outline: solid var(--primary-color2) 1px;
 }
-section.NoBorder, .pseudo-section{
-    border-radius: 0;
-}
-.background{
-    background-color: var(--background-color);
-}
-img{
+
+
+img {
     max-width: 100%;
     max-height: 100%;
     height: 100%;
@@ -68,19 +74,13 @@ img{
     min-width: 100%;
     width: 100%;
     object-fit: cover;
-    
-}
-.align-center{
-    text-align: center;
-}
-.align-left{
-    text-align: left;
 }
 
-.home-link{
+
+.home-link {
     display: block;
-width: 40px;
-height: 40px;
+    width: 40px;
+    height: 40px;
 }
 
 
@@ -88,76 +88,82 @@ height: 40px;
 HEADER
 =========================================================*/
 
-header
-{
-display: flex;
+header {
+    display: flex;
     align-items: center;
     background-size: contain;
-        overflow: visible;
+    overflow: visible;
     background-repeat: no-repeat;
     background-position: center;
     height: 60px;
     width: 100%;
- margin: 0 0 20px 0;
+    margin: 0 0 20px 0;
     box-shadow: 0 1px 0 rgb(212, 139, 99);
     display: flex;
-
-vertical-align: middle;
+    vertical-align: middle;
 }
+
 /*=========================================================
 HEADER BUTTONS
 =========================================================*/
 
-header section{
+header section {
     font-family: header-font;
-
     display: flex;
     outline: none;
     height: 40px;
     font-size: 30px;
     align-items: center;
 }
+
 @media(max-width: 800px) {
-    header section.HeaderButton, header .pseudo-section.HeaderButton{
+
+    header .HeaderButton {
 
         margin: 0;
         width: 0;
-     font-size: 0px;
-        }
+        font-size: 0px;
+    }
 }
+
 @media(min-width: 800px) {
-    header section.HeaderButton, header .pseudo-section.HeaderButton{
+
+   
+    header .HeaderButton {
         outline: none;
 
-    margin: 30px;
-    width: 170px;
-    justify-content: center;
-    overflow: hidden;
-    font-size: 25px;
+        margin: 30px;
+        width: 170px;
+        justify-content: center;
+        overflow: hidden;
+        font-size: 25px;
     }
 }
 
 
-header section:first-child:not(.MenuMoon), header .pseudo-section:first-child:not(.MenuMoon){
+header section:first-child:not(.MenuMoon),
+header .pseudo-section:first-child:not(.MenuMoon) {
     margin: 0 0 0 50px;
 }
 
-header section:last-child:not(.MenuMoon), header .pseudo-section:last-child:not(.MenuMoon){
+header section:last-child:not(.MenuMoon),
+header .pseudo-section:last-child:not(.MenuMoon) {
     margin: 0 50px 0 0;
 }
-.transparent{
-    background-color: white;
-}
+
+
+
 /*=========================================================
 HOME BUTTON MOON
 =========================================================*/
 
-header section.MenuWrapper, header .pseudo-section.MenuWrapper{
+header section.MenuWrapper,
+header .pseudo-section.MenuWrapper {
     display: flex;
     justify-content: center;
     min-width: 160px;
     width: 40px;
-overflow: visible;
+    overflow: visible;
     margin: auto;
     cursor: pointer;
     pointer-events: all;
@@ -172,40 +178,51 @@ overflow: visible;
     transition-delay: 30ms;
     pointer-events: none;
     z-index: -1;
-  }
-  .MenuMoon.Moon1{
+}
+
+.MenuMoon.Moon1 {
     z-index: 1;
-  }
-.MenuWrapper:hover .Moon2,.MenuWrapper:hover .Moon3{
+}
+
+.MenuWrapper:hover .Moon2,
+.MenuWrapper:hover .Moon3 {
     opacity: 70%;
 }
-.MenuWrapper:hover .Moon4,.MenuWrapper:hover .Moon5{
+
+.MenuWrapper:hover .Moon4,
+.MenuWrapper:hover .Moon5 {
     opacity: 20%;
 }
-.MenuWrapper:hover .Moon2{
+
+.MenuWrapper:hover .Moon2 {
     transform: translateX(30px);
 }
-.MenuWrapper:hover .Moon3{
+
+.MenuWrapper:hover .Moon3 {
     transform: translateX(-30px);
 }
-.MenuWrapper:hover .Moon4{
+
+.MenuWrapper:hover .Moon4 {
     transform: translateX(55px);
 }
-.MenuWrapper:hover .Moon5{
+
+.MenuWrapper:hover .Moon5 {
     transform: translateX(-55px);
 }
 
-/*=========================================================
-GLOBAL GRID
-=========================================================*/
-.GridWrapper{
+
+
+
+
+.GridWrapper {
 
     flex-flow: column;
     gap: 10px;
     overflow: visible;
     outline: 1px;
 }
-.GlobalGrid{
+
+.GlobalGrid {
     row-gap: 0px;
     align-self: center;
     outline: none;
@@ -217,65 +234,59 @@ GLOBAL GRID
     width: 100%;
 }
 
-/*=========================================================
-DISPLAY GRIDS
-=========================================================*/
-/*-----------------------
-CrossBar
------------------------*/
-.main-title{
+
+
+
+.main-title {
     font-family: header-font;
 
     grid-column: span 4;
     outline: none;
     font-size: 100px;
 }
-.second-title{
+
+.second-title {
     font-family: header-font;
 
     grid-column: span 4;
     outline: none;
     font-size: 75px;
 }
-.CrossBar{
-    display: grid;
-row-gap: 40px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 400px 1fr;
 
-    width: 100%;
-    height: 100%;
-    grid-column: span 4;
-}
-.section-divider{
+
+
+.section-divider {
     grid-column: span 4;
     outline: none;
     width: 100%;
     height: 1px;
     grid-column: span 4;
-box-shadow: 0px -2px 0px rgb(212, 139, 99);
+    box-shadow: 0px -2px 0px rgb(212, 139, 99);
 }
-.section-divider.no-line{
+
+.section-divider.no-line {
     height: 100px;
-
     box-shadow: none;
 }
-.section-divider.no-line.small{
+
+.section-divider.no-line.small {
     height: 50px;
-
     box-shadow: none;
 }
-.section-divider.no-line.micro{
+
+.section-divider.no-line.micro {
     height: 20px;
     box-shadow: none;
 }
-.section-divider.no-line.large{
+
+.section-divider.no-line.large {
     height: 150px;
     box-shadow: none;
 }
+
 /*-----------------------*/
 
-.hero{
+.hero {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -288,7 +299,7 @@ box-shadow: 0px -2px 0px rgb(212, 139, 99);
 }
 
 
-.hero-card{
+.hero-card {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -296,169 +307,93 @@ box-shadow: 0px -2px 0px rgb(212, 139, 99);
     border-radius: 130px 130px 0 0;
 }
 
- .hero-card section, .hero-card .pseudo-section{
+.hero-card section,
+.hero-card .pseudo-section {
     grid-row: 1;
     grid-column: 1;
 }
 
-.hero-card .hero-card-cover{
+.hero-card .hero-card-cover {
     transition: 600ms;
     z-index: 1;
-    
+
 }
-@media (pointer: none) { 
 
-     .hero-card-cover{
+@media (pointer: none) {
+
+    .hero-card-cover {
         display: none;
     }
-} 
-@media (pointer: coarse) 
-{ 
+}
 
-    .hero-card-cover{
+@media (pointer: coarse) {
+
+    .hero-card-cover {
         display: none;
     }
-} 
+}
 
-.hero-card, .hero .hero-card-cover
-{
-   margin: 0 auto 0 auto;
-   width: 260px;
+.hero-card,
+.hero .hero-card-cover {
+    margin: 0 auto 0 auto;
+    width: 260px;
     height: 440px;
 }
 
 
-.hero-card:hover .hero-card-cover
-{
-   transform:translate(0, -100%);
+.hero-card:hover .hero-card-cover {
+    transform: translate(0, -100%);
 }
 
 
 
-.hover-card{
+.hover-card {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     overflow: hidden;
 }
 
- .hover-card section, .hover-card .pseudo-section{
+.hover-card section,
+.hover-card .pseudo-section {
     grid-row: 1;
     grid-column: 1;
 }
-@media (pointer: none) { 
 
-    .hover-card .hover-card-cover{
+@media (pointer: none) {
+
+    .hover-card .hover-card-cover {
         display: none;
     }
-} 
-@media (pointer: coarse) { 
+}
 
-    .hover-card .hover-card-cover{
+@media (pointer: coarse) {
+
+    .hover-card .hover-card-cover {
         display: none;
     }
-} 
-    .hover-card .hover-card-cover{
-        transition: 500ms;
-        z-index: 1;
-        border-radius:  0px;
-    }
+}
+
+.hover-card .hover-card-cover {
+    transition: 500ms;
+    z-index: 1;
+    border-radius: 0px;
+}
 
 
 
- .hover-card{
+.hover-card {
     margin: 0 auto 0 auto;
 
 }
-.hover-card:hover .hover-card-cover{
-   transform:translate(0, -101%);
-}
-@media(pointer: coarse){
-    .clickable
-    {
-        outline: solid var(--primary-color) 4px;
 
-    }
-}
-@media(pointer: none){
-
-    .clickable
-    {
-        outline: solid var(--primary-color) 4px;
-
-    }
-}
-
-.clickable{
-    transition-duration: 5ms;
-}
-.clickable:hover{
-    outline: solid var(--primary-color) 4px;
-}
-
-@media(pointer: fine){
-
-    .mobile-exclusive{
-        display: none;
-
-    }
-    .text-box.mobile-exclusive{
-        display: none;
-
-    }
-}
-@media(pointer: coarse){
-
-    .desktop-exclusive{
-        display: none;
-
-    }
-    .text-box.desktop-exclusive{
-        display: none;
-
-    }
-}
-@media(pointer: none){
-
-    .desktop-exclusive{
-        display: none;
-
-    }
-    .text-box.desktop-exclusive{
-        display: none;
-
-    }
+.hover-card:hover .hover-card-cover {
+    transform: translate(0, -101%);
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.Seperator{
-    display: inline-grid;
-    background-color: var(--primary-color);
-height: 600px;
-width: 100%;
-grid-column: span 4;
-}
-
-.DisplayGrid{
+.DisplayGrid {
     display: inline-grid;
     overflow: hidden;
     background-color: var(--background-color);
@@ -468,7 +403,9 @@ grid-column: span 4;
     column-gap: 1.5%;
     row-gap: 1.5%;
 }
-.DisplayGrid.Style1, .DisplayGrid.Style2{
+
+.DisplayGrid.Style1,
+.DisplayGrid.Style2 {
     padding: 1%;
     margin: 1%;
     height: 440px;
@@ -478,109 +415,135 @@ grid-column: span 4;
 
 }
 
-.DisplayGrid.Style1{
+.DisplayGrid.Style1 {
     width: 100%;
 
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, 1fr);
 }
-.DisplayGrid.Style2{
+
+.DisplayGrid.Style2 {
     width: 90%;
 
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
 }
 
-
-
-
-
-.DisplayGrid.Style1.span-one, .DisplayGrid.Style2.span-one
-{
+.DisplayGrid.Style1.span-one,
+.DisplayGrid.Style2.span-one {
     grid-template-columns: repeat(1, 1fr);
     grid-column: span 1;
 }
-.DisplayGrid.Style2.span-one{grid-template-columns: repeat(2, 1fr);}
-.DisplayGrid.Style1.span-one{grid-template-columns: repeat(1, 1fr);}
+
+.DisplayGrid.Style2.span-one {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.DisplayGrid.Style1.span-one {
+    grid-template-columns: repeat(1, 1fr);
+}
 
 
-.DisplayGrid.Style1.span-two, .DisplayGrid.Style2.span-two
-{
+.DisplayGrid.Style1.span-two,
+.DisplayGrid.Style2.span-two {
     grid-template-columns: repeat(2, 1fr);
     grid-column: span 2;
 }
-.DisplayGrid.Style2.span-two{grid-template-columns: repeat(4, 1fr);}
-.DisplayGrid.Style1.span-two{grid-template-columns: repeat(2, 1fr);}
 
-.DisplayGrid.Style1.span-three, .DisplayGrid.Style2.span-three
-{
+.DisplayGrid.Style2.span-two {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.DisplayGrid.Style1.span-two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.DisplayGrid.Style1.span-three,
+.DisplayGrid.Style2.span-three {
     grid-template-columns: repeat(3, 1fr);
     grid-column: span 3;
 }
-.DisplayGrid.Style2.span-three{grid-template-columns: repeat(6, 1fr);}
-.DisplayGrid.Style1.span-three{grid-template-columns: repeat(3, 1fr);}
 
-.DisplayGrid.Style1.span-four, .DisplayGrid.Style2.span-four
-{
+.DisplayGrid.Style2.span-three {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.DisplayGrid.Style1.span-three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.DisplayGrid.Style1.span-four,
+.DisplayGrid.Style2.span-four {
     grid-template-columns: repeat(4, 1fr);
     grid-column: span 4;
 }
-.DisplayGrid.Style2.span-four{grid-template-columns: repeat(8, 1fr);}
-.DisplayGrid.Style1.span-four{grid-template-columns: repeat(4, 1fr);}
 
+.DisplayGrid.Style2.span-four {
+    grid-template-columns: repeat(8, 1fr);
+}
 
-
-
-.DisplayGrid.Style1.span-one-vert, .DisplayGrid.Style2.span-one-vert
-{
+.DisplayGrid.Style1.span-four {
+    grid-template-columns: repeat(4, 1fr);
+}
+.DisplayGrid.Style1.span-one-vert,
+.DisplayGrid.Style2.span-one-vert {
     grid-row: span 1;
     height: 220px;
 }
+.DisplayGrid.Style2.span-one-vert {
+    grid-template-rows: repeat(2, 1fr);
+}
 
-
-.DisplayGrid.Style2.span-one-vert{grid-template-rows: repeat(2, 1fr);}
-.DisplayGrid.Style1.span-one-vert{grid-template-rows: repeat(1, 1fr);}
-
-
-
-.DisplayGrid.Style1.span-two-vert, .DisplayGrid.Style2.span-two-vert
-{
+.DisplayGrid.Style1.span-one-vert {
+    grid-template-rows: repeat(1, 1fr);
+}
+.DisplayGrid.Style1.span-two-vert,
+.DisplayGrid.Style2.span-two-vert {
     grid-row: span 2;
     height: 440px;
 }
-.DisplayGrid.Style2.span-two-vert{grid-template-rows: repeat(4, 1fr);}
-.DisplayGrid.Style1.span-two-vert{grid-template-rows: repeat(2, 1fr);}
 
-.DisplayGrid.Style1.span-three-vert, .DisplayGrid.Style2.span-three-vert
-{
+.DisplayGrid.Style2.span-two-vert {
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.DisplayGrid.Style1.span-two-vert {
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.DisplayGrid.Style1.span-three-vert,
+.DisplayGrid.Style2.span-three-vert {
     grid-template-rows: repeat(3, 1fr);
     grid-row: span 3;
     height: 660px;
-
 }
-.DisplayGrid.Style2.span-three-vert{grid-template-rows: repeat(6, 1fr);}
-.DisplayGrid.Style1.span-three-vert{grid-template-rows: repeat(3, 1fr);}
 
-.DisplayGrid.Style1.span-four-vert, .DisplayGrid.Style2.span-four-vert
-{
+.DisplayGrid.Style2.span-three-vert {
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.DisplayGrid.Style1.span-three-vert {
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.DisplayGrid.Style1.span-four-vert,
+.DisplayGrid.Style2.span-four-vert {
     grid-template-rows: repeat(4, 1fr);
     grid-row: span 4;
     height: 880px;
 
 }
-.DisplayGrid.Style2.span-four-vert{grid-template-rows: repeat(8, 1fr);}
-.DisplayGrid.Style1.span-four-vert{grid-template-rows: repeat(4, 1fr);}
+.DisplayGrid.Style2.span-four-vert {
+    grid-template-rows: repeat(8, 1fr);
+}
+
+.DisplayGrid.Style1.span-four-vert {
+    grid-template-rows: repeat(4, 1fr);
+}
 
 
+.DisplayGrid.Style6 {
 
-
-
-
-
-
-
-.DisplayGrid.Style6{
-    
     box-sizing: border-box;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
@@ -591,13 +554,16 @@ grid-column: span 4;
     grid-column: span 4;
     background-color: transparent;
 }
-.DisplayGrid.Style6.small{
-    
+
+.DisplayGrid.Style6.small {
+
 
     height: 150px;
 }
-.DisplayGrid.Style1 section, .DisplayGrid.Style1 .pseudo-section{
-overflow: hidden;
+
+.DisplayGrid.Style1 section,
+.DisplayGrid.Style1 .pseudo-section {
+    overflow: hidden;
 }
 
 
@@ -605,89 +571,21 @@ overflow: hidden;
 
 
 
-/*-----------------------
-DisplayGrid Wrappers
------------------------*/
-.LeftWrapper{
-    display: flex;
-    width: 100%;
-    justify-content: left;
-}
-
-.RightWrapper{
-    display: flex;
-    width: 100%;
-    justify-content: right;
-}
-
-/*=========================================================
-DISPLAY GRID COMPONENTS
-=========================================================*/
-/*-----------------------
-CrossBar
------------------------*/
 
 
 
-
-
-
-
-.CrossBarSection{
+.CrossBarSection {
     height: 50px;
     margin: auto;
     width: 100%;
-}
-.CrossBar .CrossBarSection:not(.ScrollWrapper){
-    height: 50px;
-    margin: auto;
-    width: 100%;
-}
- .CrossBar section:last-child:not(.Card), .CrossBar .pseudo-section:last-child:not(.Card) {
-    border-radius: 0 0 30px 30px;
-}
-
-.CrossBar section:first-child:not(.Card), .CrossBar .pseudo-section:first-child:not(.Card){
-    border-radius: 30px 30px 0 0;
-}
-
-.CrossBarSection{
     grid-column: span 4;
 }
 
 
-.CrossBarSection.ScrollWrapper
-{
-    height: 100%;
-    grid-column: span 4;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    &::-webkit-scrollbar {
-        display: none;
-      }
-    .Card{
-        opacity: 70%;
-        overflow: hidden;
-        margin: 10px;
-        flex: 0 0 auto;
-        transition-property: all;
-        transition-duration: 100ms;
-    }
-    .Card:hover{
-        opacity: 100%;
-        outline-width: 3px;
-    }
-}
 
-.ScrollButtonB:hover{
-outline-width: 3px;
-}
-.ScrollButtonF:hover{
-    outline-width: 3px;
-}
-/*-----------------------*/
 
+
+/*potential duplicate*/
 a.fill-div {
     display: block;
     height: 100%;
@@ -698,284 +596,358 @@ a.fill-div {
 
 
 
-
-   
-
-
-
-
-
-    .display-box{
-        width: 200px;
-        height: 235px;
-        overflow: hidden;
-
-    }
-    .display-box.span-two{
-        width: 420px;
-    }
-    .display-box.span-three{
-        width: 640px;
-
-    }
-    .display-box.span-four{
-        width: 860px;
-
-    }
-    .display-box.span-five{
-        width: 180px;
-
-    }
-   
-
-    .text-box{
-        display: inline;
-        word-break:keep-all;
-        font-style: italic;
-        box-sizing: border-box;
-        padding: 10px;
-        width: 100%;
-        height: 1fr;
-        overflow: hidden;
-    }
-
-
-    .b1{
-        border-top-left-radius: 110px;
-    }
-    .b2{
-        border-top-right-radius: 110px;
-
-    }
-    .b3{
-        border-bottom-right-radius: 110px;
-
-    }
-    .b4{
-        border-bottom-left-radius: 110px;
-
-    }
-    .span-one{
-        grid-column: span 1;
-    
-    }
-    .span-two{
-        grid-column: span 2;
-    
-    }.span-three{
-        grid-column: span 3;
-    
-    }.span-four{
-        grid-column: span 4;
-    }
-    .span-five{
-        grid-column: span 5;
-
-    }
-    .span-six{
-        grid-column: span 6;
-
-    }
-.hide-overflow{
+.display-box {
+    width: 200px;
+    height: 235px;
     overflow: hidden;
 
 }
 
-
-    .span-one-vert{
-        grid-row: span 1;
-    
-    }
-    .span-two-vert{
-        grid-row: span 2;
-    
-    }.span-three-vert{
-        grid-row: span 3;
-    
-    }.span-four-vert{
-        grid-row: span 4;
-    }
-    .span-five-vert{
-        grid-row: span 5;
-
-    }
-    .fill{
-        height: 100%;
-    }
-    .large{
-    height: 450px;
-    }
-    .small{
-height: 150px;
-    }
-    .micro{
-        height: 65px;
-    }
-    .text-headerS1{
-
-        font-weight: bold;
-        font-family: Header-Font;
-        font-size: 45px;
-        color: var(--primary-color);
-    }
-    
-    .text-headerS2{
-        
-
-        font-size: 33px;
-
-        color: var(--primary-color);
-    }
-    .text-footer{
-      
-
-        font-size: 15px;
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.CornerTag{
-    background-image: url(../images//CornerTag.png);
-    background-size: 65px;
-    place-self: center;
-    grid-row: 1;
-    grid-column: 5;
-    width: 65px;
-    height: 105px;
-    z-index: 1;
-    background-color: var(--background-color);
-    }
-/*=========================================================
-SIDE BAR PARENTS
-=========================================================*/
-
-
-
-
-
-
-
-
-/*=========================================================
-SIDE BAR COMPONENTS
-=========================================================*/
-.SideBar section, .SideBar .pseudo-section{
-overflow: hidden;
-height: 100%;
-width: 100%;
-background-color: rgb(0, 0, 0, 0);
+.display-box.span-two {
+    width: 420px;
 }
-.DoubleRow{
-    grid-row: span 2;
+
+.display-box.span-three {
+    width: 640px;
+
 }
-.DoubleColumn{
-    grid-column: span 2;
+
+.display-box.span-four {
+    width: 860px;
+
 }
+
+.display-box.span-five {
+    width: 180px;
+
+}
+
+
+.text-box {
+    display: inline;
+    word-break: keep-all;
+    font-style: italic;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    height: 1fr;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+.text-headerS1 {
+
+    font-weight: bold;
+    font-family: Header-Font;
+    font-size: 45px;
+    color: var(--primary-color);
+}
+
+.text-headerS2 {
+    font-size: 33px;
+
+    color: var(--primary-color);
+}
+
+.text-footer {
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*=========================================================
 THUMBNAILS
 =========================================================*/
-.Thumbnail{
-    
+.Thumbnail {
+
     display: inline-block;
     background-size: 600px;
     background-position: center;
 }
-.Style1:not(.DisplayGrid){
+
+.Style1:not(.DisplayGrid) {
     background-size: 500px;
 
     background-image: url(../images//Background\ 1.png);
-    
+
 }
-.Style2:not(.DisplayGrid){
+
+.Style2:not(.DisplayGrid) {
     background-size: 500px;
 
     background-image: url(../images//Background\ 2.png);
-    
+
 }
-.Style3:not(.DisplayGrid){
+
+.Style3:not(.DisplayGrid) {
     background-size: 500px;
 
     background-image: url(../images//Background\ 3.png);
-    
+
 }
-.Style4:not(.DisplayGrid){
+
+.Style4:not(.DisplayGrid) {
     background-size: 500px;
 
     background-image: url(../images//Background\ 4.png);
-    
+
 }
-.Style5:not(.DisplayGrid){
+
+.Style5:not(.DisplayGrid) {
     background-image: url(../images//Background\ 5.png);
     background-size: 500px;
 }
-.Style6:not(.DisplayGrid){
+
+.Style6:not(.DisplayGrid) {
     background-size: 500px;
 
     background-image: url(../images//Background\ 6.png);
 }
-.Style7:not(.DisplayGrid){
+
+.Style7:not(.DisplayGrid) {
     background-size: 500px;
 
     background-image: url(../images//Background\ 7.png);
 }
-.Style8:not(.DisplayGrid){
+
+.Style8:not(.DisplayGrid) {
     background-size: 500px;
 
     background-image: url(../images//Background\ 8.png);
 }
 
-.Style9:not(.DisplayGrid){
+.Style9:not(.DisplayGrid) {
     background-size: 500px;
     background-position: center;
 
     background-image: url(../images//Background\ 10.png);
 }
-.Style10:not(.DisplayGrid){
+
+.Style10:not(.DisplayGrid) {
     background-size: 500px;
     background-position: center;
 
     background-image: url(../images//Background\ 11.png);
 }
-.Style11:not(.DisplayGrid){
+
+.Style11:not(.DisplayGrid) {
     background-size: 500px;
     background-position: center;
 
     background-image: url(../images//Background\ 12.png);
 }
 
-.Style2 .Thumbnail,.Style4 .Thumbnail{
+.Style2 .Thumbnail,
+.Style4 .Thumbnail {
     background-size: 100%;
     grid-column: 1;
     object-fit: cover;
     overflow: hidden;
 }
-.Style2 .Thumbnail:hover,.Style4 .Thumbnail:hover{
+
+.Style2 .Thumbnail:hover,
+.Style4 .Thumbnail:hover {
     outline-width: 3px;
 }
 
-#preloader{
+
+/*==================
+MODIFIERS
+==================*/
+
+@media(pointer: coarse) {
+    .clickable {
+        outline: solid var(--primary-color) 4px;
+
+    }
+}
+
+@media(pointer: none) {
+
+    .clickable {
+        outline: solid var(--primary-color) 4px;
+
+    }
+}
+
+.clickable {
+    transition-duration: 5ms;
+}
+
+.clickable:hover {
+    outline: solid var(--primary-color) 4px;
+}
+.b1 {
+    border-top-left-radius: 110px;
+}
+
+.b2 {
+    border-top-right-radius: 110px;
+}
+
+.b3 {
+    border-bottom-right-radius: 110px;
+}
+
+.b4 {
+    border-bottom-left-radius: 110px;
+}
+.span-one {
+    grid-column: span 1;
+
+}
+
+.span-two {
+    grid-column: span 2;
+
+}
+
+.span-three {
+    grid-column: span 3;
+
+}
+
+.span-four {
+    grid-column: span 4;
+}
+
+.span-five {
+    grid-column: span 5;
+
+}
+
+.span-six {
+    grid-column: span 6;
+
+}
+.hide-overflow {
+    overflow: hidden;
+}
+
+
+.span-one-vert {
+    grid-row: span 1;
+
+}
+
+.span-two-vert {
+    grid-row: span 2;
+
+}
+
+.span-three-vert {
+    grid-row: span 3;
+
+}
+
+.span-four-vert {
+    grid-row: span 4;
+}
+
+.span-five-vert {
+    grid-row: span 5;
+
+}
+
+
+.align-center {
+    text-align: center;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.fill {
+    height: 100%;
+}
+
+.large {
+    height: 450px;
+}
+
+.small {
+    height: 150px;
+}
+
+.micro {
+    height: 65px;
+}
+
+@media(pointer: fine) {
+
+    .mobile-exclusive {
+        display: none;
+
+    }
+
+    .text-box.mobile-exclusive {
+        display: none;
+
+    }
+}
+
+@media(pointer: coarse) {
+
+    .desktop-exclusive {
+        display: none;
+
+    }
+
+    .text-box.desktop-exclusive {
+        display: none;
+
+    }
+
+}
+
+@media(pointer: none) {
+
+    .desktop-exclusive {
+        display: none;
+
+    }
+
+    .text-box.desktop-exclusive {
+        display: none;
+
+    }
+}
+
+
+
+
+#preloader {
     background: var(--background-color) url(../images/output-onlinegiftools.gif) no-repeat center center;
-    background-size: 20%;
+    background-size: 15vh;
     position: absolute;
- 
+
     width: 100vw;
     height: 100vh;
     z-index: 100;
