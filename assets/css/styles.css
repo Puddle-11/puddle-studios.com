@@ -231,6 +231,7 @@ CrossBar
 
     grid-column: span 4;
     outline: none;
+    text-align: left;
     font-size: 75px;
 }
 .CrossBar{
@@ -871,4 +872,18 @@ section.Style11:not(.DisplayGrid){
 }
 .Style2 .Thumbnail:hover,.Style4 .Thumbnail:hover{
     outline-width: 3px;
+}
+
+#preloader{
+    background: var(--background-color) url(../images/output-onlinegiftools.gif) no-repeat center center;
+    background-size:  8%;
+    position: absolute;
+ 
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
