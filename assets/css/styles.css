@@ -477,7 +477,6 @@ header .pseudo-section.MenuWrapper {
     grid-template-columns: repeat(4, 1fr);
     grid-column: span 4;
 }
-
 .DisplayGrid.Style2.span-four {
     grid-template-columns: repeat(8, 1fr);
 }
@@ -531,7 +530,7 @@ header .pseudo-section.MenuWrapper {
     grid-template-rows: repeat(4, 1fr);
     grid-row: span 4;
     height: 880px;
-
+    
 }
 .DisplayGrid.Style2.span-four-vert {
     grid-template-rows: repeat(8, 1fr);
@@ -540,6 +539,7 @@ header .pseudo-section.MenuWrapper {
 .DisplayGrid.Style1.span-four-vert {
     grid-template-rows: repeat(4, 1fr);
 }
+
 
 
 .DisplayGrid.Style6 {
