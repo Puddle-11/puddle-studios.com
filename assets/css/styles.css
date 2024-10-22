@@ -111,8 +111,7 @@ header {
 HEADER BUTTONS
 =========================================================*/
 
-header section,
-header .pseudo-section {
+header section {
     font-family: header-font;
     display: flex;
     outline: none;
@@ -123,7 +122,7 @@ header .pseudo-section {
 
 @media(max-width: 800px) {
 
-    header .header-button {
+    header .HeaderButton {
 
         margin: 0;
         width: 0;
@@ -134,11 +133,9 @@ header .pseudo-section {
 @media(min-width: 800px) {
 
    
-    header .header-button {
-        
+    header .HeaderButton {
         outline: none;
-        font-style: normal;
-        font-weight:normal;
+
         margin: 30px;
         width: 170px;
         justify-content: center;
@@ -243,16 +240,10 @@ header .pseudo-section.MenuWrapper {
 
 
 
-h1{
-    margin: 0px;
-}
-h2{
-    margin: 0px;
-}
+
 .main-title {
     font-family: header-font;
-    font-style: normal;
-    font-weight:normal;
+
     grid-column: span 4;
     outline: none;
     font-size: 100px;
