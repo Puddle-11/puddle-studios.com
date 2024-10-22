@@ -245,9 +245,16 @@ header .pseudo-section.MenuWrapper {
 
 h1{
     margin: 0px;
+    font-style: normal;
+    font-weight:normal;
+    outline: none;
 }
 h2{
     margin: 0px;
+    font-style: normal;
+    font-weight:normal;
+    outline: none;
+
 }
 .main-title {
     font-family: header-font;
