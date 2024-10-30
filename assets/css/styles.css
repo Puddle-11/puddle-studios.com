@@ -694,33 +694,33 @@ THUMBNAILS
 .Thumbnail {
 
     display: inline-block;
-    background-size: 600px;
+    background-size: 350px;
     background-position: center;
 }
 
 .Style1:not(.DisplayGrid) {
-    background-size: 500px;
+    background-size: 350px;
 
     background-image: url(../images//Background\ 1.png);
 
 }
 
 .Style2:not(.DisplayGrid) {
-    background-size: 500px;
+    background-size: 350px;
 
     background-image: url(../images//Background\ 2.png);
 
 }
 
 .Style3:not(.DisplayGrid) {
-    background-size: 500px;
+    background-size: 350px;
 
     background-image: url(../images//Background\ 3.png);
 
 }
 
 .Style4:not(.DisplayGrid) {
-    background-size: 500px;
+    background-size: 350px;
 
     background-image: url(../images//Background\ 4.png);
 
@@ -728,43 +728,43 @@ THUMBNAILS
 
 .Style5:not(.DisplayGrid) {
     background-image: url(../images//Background\ 5.png);
-    background-size: 500px;
+    background-size: 350px;
 }
 
 .Style6:not(.DisplayGrid) {
-    background-size: 500px;
+    background-size: 350px;
 
     background-image: url(../images//Background\ 6.png);
 }
 
 .Style7:not(.DisplayGrid) {
-    background-size: 500px;
+    background-size: 350px;
 
     background-image: url(../images//Background\ 7.png);
 }
 
 .Style8:not(.DisplayGrid) {
-    background-size: 500px;
+    background-size: 350px;
 
     background-image: url(../images//Background\ 8.png);
 }
 
 .Style9:not(.DisplayGrid) {
-    background-size: 500px;
+    background-size: 350px;
     background-position: center;
 
     background-image: url(../images//Background\ 10.png);
 }
 
 .Style10:not(.DisplayGrid) {
-    background-size: 500px;
+    background-size: 350px;
     background-position: center;
 
     background-image: url(../images//Background\ 11.png);
 }
 
 .Style11:not(.DisplayGrid) {
-    background-size: 500px;
+    background-size: 350px;
     background-position: center;
 
     background-image: url(../images//Background\ 12.png);
@@ -772,7 +772,7 @@ THUMBNAILS
 
 .Style2 .Thumbnail,
 .Style4 .Thumbnail {
-    background-size: 100%;
+    background-size: 350px;
     grid-column: 1;
     object-fit: cover;
     overflow: hidden;
