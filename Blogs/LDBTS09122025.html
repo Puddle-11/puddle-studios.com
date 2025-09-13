@@ -57,7 +57,7 @@
         </section>
 
         <section class="header-button"><a href="../Art.html">ART</a></section>
-        <section class="header-button"><a href="../Blog.html">BLOG</a></section>
+        <section class="header-button"><a href="../Blog.html" >BLOG</a></section>
     </header>
 
     <section class="GridWrapper">
@@ -74,41 +74,37 @@
             <section class="section-divider no-line micro"></section>
 
 
-            <section class="main-title align-center">Labyrinth Descension</section>
-            <section class="subtitle no-outline">09.08.2025</section>
+            <section class="second-title align-center">Difficulty with Sprites</section>
+            <section class="subtitle no-outline">09.12.2025</section>
             <section class="section-divider no-line micro"></section>
-
+            
             <section class="section-divider"></section>
+
+            <section class="subtitle no-outline">Ty Seidel</section>
 
         
 
-            <section class=" text-box second-title span-four no-outline">Synopsis</section>
+            <section class=" text-box second-title span-four no-outline">Issues</section>
 
             <section class="text-box span-four no-outline">
 
-                &emsp;&emsp; In the Labyrinth Descension, decend into a mad world of mosters and infected humans with your party of 4, to find out what is killing your world. A mysterious infection
-                spread across earth, steaming from this facility. Decent into the facility and document what you find, be careful to watch out for the inhabitants.
-                <br /> <br />
-                Explore this dark landscape with just a lantern, and try to survive.
-                <br /> <br />
-                This JRPG rougelike follows a party of 4 into a dark dungeon where they must survive. In this game we take the best aspects of 2 genres. With a story driven game loop, and turn based combat,
-                aswell as randomly generated dungeon levels and perma-death, If you enjoy a challenge this is your game. Staying with the theme of mixing and matching themes, this game will feature an HD-2D perspective.
-                2D assets existing in a 3d world.
-                
+                &emsp;&emsp;Note: I didn't have any major issues with week, this was the closest thing (it was more of a having to learn as opposed to having an issue or being stuck)
+                  <br />
+                &emsp;&emsp;Our game is a JRPG so it utilizes both 2D and 3D assets. I was tasked with making keys that the player could pickup, and we wanted this to be a 2D asset. I had never done anything in 2D in unreal before and was unsure as to what variable types were needed for this, and how to set it up. I also needed to figure out how to find a 2D key asset, and get it into Unreal. There was a lot of uncertainty and I did not have a lot of time to do the whole thing. If I couldn't figure out how to find a 2D asset, get it in Unreal, and then attach it to the object in C++, we would be forced to then find and use a 3D asset, which would throw the game's appearance off given the fact the other pickups are 2D too.
+                <br />
+
+            </section>
+                        <section class=" text-box second-title span-four no-outline">Solutions</section>
+ <section class="text-box span-four no-outline">
+
+                &emsp;&emsp;First, I quickly realized from working with Unity, that a 2D asset is a sprite, which is just an image. I didn't know if the type matter, so I just found a key picture on google and tried dragging it into Unreal which worked. It wasn't a sprite type though, but just from right clicking on it, I found something called sprite options, which then let me create a sprite from the image. In code, thanks to google I found the correct variable type to hold a sprite, and the includes required for it, but it still didn't work. Thinking back to END and GAR, I remembered about modules and looked to see if sprites needed a module to work, and sure enough it did, Paper2D. After adding that the variable types were valid in Visual Studio. I then realized setting it up was just like how meshes were set up, calling CreateDefaultSubObject in the constructor. At this point I thought everything was good, but then I ran into one more final problem. The sprite of the key had a white background it wasn't transparent. I tried messing around with it in Unreal to make it transparent but couldn't figure it out. I then went back to the picture on my computer and using the AI background editor in photos, removed the background and made it transparent, readded it to Unreal, and recreated the sprite. Luckily all the pickup and key functionality worked first try!
+                <br />
+
             </section>
             <section class="section-divider no-line small"></section>
-
                         <section class="section-divider"></section>
-            <section class="section-divider no-line small"></section>
-            <section class="main-title align-center">Pitch video</section>
-           <section class="section-divider"></section>
-            <section class="section-divider no-line small"></section>
-            <section class="span-four span-one-vert">
 
-                <video controls width="600">
-                  <source src="../assets/Videos/Final Project pitch Mechanical Gardens - Labyrinth Descension.mp4" type="video/mp4" />
-                </video>
-            </section>
+             
 
 
             <section class="section-divider no-line large"></section>

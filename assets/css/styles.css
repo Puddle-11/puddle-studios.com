@@ -259,7 +259,9 @@ h1{
     outline: none;
     font-size: 75px;
 }
-
+.solid-bg{
+    background-color: var(--background-color2);
+}
 
 
 .section-divider {
