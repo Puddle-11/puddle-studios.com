@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>Puddle Studios | Blog</title>
+    
+    
+        <link rel="stylesheet" href="../assets/css/styles.css">
+        <link rel="canonical" href="https://puddle-studios.com/Blog.html" />
+        <link rel="shortcut icon" href="../Favicon-144.ico" />
+        <meta name=“robots” content="index, follow">
+    
+    
+        <meta name="description"
+            content="Puddle studios is a solo indie game dev studio located in Florida. currently working on 'Forgotten God'.">
+        
+            <meta name='pagename' content='Puddle Studios Art'>
+
+        <!--===========================
+        OPEN GRAPH TAGS 
+        ============================-->
+        <meta property="og:url" content="https://puddle-studios.com/Blog">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Puddle Studios">
+        <meta property="og:description"
+            content="Puddle studios is a solo indie game dev studio located in Florida. currently working on 'Forgotten God'.">
+        <meta property="og:image" content="https://puddle-studios.com/assets/images/Embed Cover.png">
+        <!--===========================
+        OPEN GRAPH TAGS | TWITTER
+        ============================-->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="puddle-studios.com">
+        <meta property="twitter:url" content="https://puddle-studios.com/Blog">
+        <meta name="twitter:title" content="Puddle Studios">
+        <meta name="twitter:description"
+            content="Puddle studios is a solo indie game dev studio located in Florida. currently working on 'Forgotten God'.">
+        <meta property="twitter:image" content="https://puddle-studios.com/assets/images/Embed Cover.png">
+    
+</head>
+
+
+<body class="body">
+
+
+
+
+    <header>
+        <section class="header-button"><a href="../Social.html">SOCIAL</a></section>
+        <section class="header-button"><a href="../Games.html">GAMES</a></section>
+        <section class="MenuWrapper no-outline Home">
+            <a href="../index.html" class="home-link"></a>
+            <section class="MenuMoon Moon1"><img src="../assets/images/Moons/Full Moon.png"></section>
+            <section class="MenuMoon Moon2"><img src="../assets/images/Moons/Cresent Moon 1.png"></section>
+            <section class="MenuMoon Moon3"><img src="../assets/images/Moons/Cresent Moon Flip 1.png"></section>
+            <section class="MenuMoon Moon4"><img src="../assets/images/Moons/Cresent Moon 2.png"></section>
+            <section class="MenuMoon Moon5"><img src="../assets/images/Moons/Cresent Moon Flip 2.png"></section>
+        </section>
+
+        <section class="header-button"><a href="../Art.html">ART</a></section>
+        <section class="header-button"><a href="../Blog.html" >BLOG</a></section>
+    </header>
+
+    <section class="GridWrapper">
+        <section class="GlobalGrid">
+
+
+
+
+
+
+            <section class="section-divider no-line small"></section>
+
+            <section class="section-divider"></section>
+            <section class="section-divider no-line micro"></section>
+
+
+            <section class="main-title align-center">Difficulty with Animations</section>
+            <section class="subtitle no-outline">09.19.2025</section>
+            <section class="section-divider no-line micro"></section>
+            
+            <section class="section-divider"></section>
+
+            <section class="subtitle no-outline">Ty Seidel</section>
+
+        
+
+            <section class=" text-box second-title span-four no-outline">Issues</section>
+
+            <section class="text-box span-four no-outline">
+
+                &emsp;&emsp;
+I download an asset pack with a door that had an animation, but I soon realized its not like unity and you need to create an animation blueprint for anything to play an animation, and the asset didn't come with one, so I had to figure it out with my only experience being from the one we did in END and GAR, which was different and very bloated compared to what this would need. It took me a bit but I got the animation playing. Then the main issue was, the door would constantly play the open animation from the moment the game was loaded, and just keep opening, then resetting to the normal closed model, opening again, and so on. I needed it to only play when the function I set up to play it was called, and then stop, and stay open. There were many things needed to achieve this. This is the anim graph that I copied over from what we created in END, which I was using for the door animation blueprint:
+                <br />
+                <br />
+
+            </section>
+                        <section class=" text-box second-title span-four no-outline">Solutions</section>
+ <section class="text-box span-four no-outline">
+
+                &emsp;&emsp;Since the animation was starting immediately even before the play animation method was called, I started doing some debugging from where the animation graph started, and I soon realized that on entry it went right into the state with the animation, which was making it play over and over regardless of the method call. I then made an idle state, and made the play animation flip a bool which would advance the state into the state which plays the animation, then set a timer for the animation length to then call another method which changed another bool, which would progress it to the opened state which would stop the animation from playing. The image of this is shown below. I got it working but I am confused on the point of the "Play Slot Animation as Dynamic Montage" which we were shown in class is how you play animations, as this isn't even needed as it starts playing the second it gets into the active state anyway, but I kept it there just because its what I know and makes more sense to me.
+                
+                <br />
+                &emsp;&emsp;Then the final issue was keeping the door open. After it would play the open animation, it would just go back to the default way the model looked, which was closed. I tried stopping the method just before it ended hoping it would pause there but that just made the animation exit early and go back to closed too. I then came up with the idea to make a duplicate of the animation, and remove all the frames but the last few where it doesn't noticeably move and the door is open, and then have the final "idle" state just play that animation over and over, keeping it open even though the animation doesn't actually move it (only 3 frames long of standing still, I also significantly slowed it down and put it on loop). This is where I got stuck the longest as trying to play this animation would just visually do nothing, the door stayed closed and didn't move. I thought maybe something was wrong since the animation was so short so I tried just cutting the original one in half. I used the 2nd half but when it played it played just the first half of the animation. This was very interesting. I then tried playing the animation backwards, but then in the game once again it just started from the beginning. It wasn't playing the animations right, it was like it just wanted to keep the original version of it. I then thought back to the anim graph (shown in the problem), I don't fully understand what that stuff does but what I do know is what cache means, and I thought maybe that was causing the issue, the original animation was getting cached and it kept trying to use that. I removed that stuff and hooked the slot straight into the output, and just like that it worked (shown below)!
+            </section>
+            <section class="section-divider no-line small"></section>
+                        <section class="section-divider"></section>
+
+                           <section class="DisplayGrid Style1 span-four span-three-vert">
+                <section class="span-two"><img src="../assets/images/TS19-1.png"></section>
+                <section class="span-two"><img src="../assets/images/TS19-3.png"></section>
+                <section class="span-three span-two-vert"><img src="../assets/images/TS19-2.png"></section>
+            </section>
+           
+
+
+            <section class="section-divider no-line large"></section>
+            <section class="section-divider no-line large"></section>
+            <section class="section-divider no-line large"></section>
+            
+        </section>
+    </section>
+</body>
+
+</html>
