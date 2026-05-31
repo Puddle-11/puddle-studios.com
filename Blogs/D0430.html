@@ -63,46 +63,42 @@
     <section class="GridWrapper">
         <section class="GlobalGrid">
 
+
+
+
+
+
             <section class="section-divider no-line small"></section>
 
             <section class="section-divider"></section>
             <section class="section-divider no-line micro"></section>
 
-            <section class="main-title align-center">Settings Issues</section>
-            <section class="subtitle no-outline">09.26.2025</section>
+
+            <section class="main-title align-center">MVP Release</section>
+            <section class="subtitle no-outline">04.30.2026</section>
             <section class="section-divider no-line micro"></section>
             
             <section class="section-divider"></section>
+            <section class="section-divider no-line small"></section>
 
-            <section class="subtitle no-outline">Dante Holness</section>
                 
         
 
-            <section class=" text-box second-title span-four no-outline">Issues</section>
+            <section class=" text-box second-title span-four no-outline">Overview</section>
 
             <section class="text-box span-four no-outline">
 
-                &emsp;&emsp;
-                I had an issue with the settings menu as a lot of the bindings didn't work at first, One issue I had was that some of the buttons would not work correctly despite my bindings from blueprint to code and viceversa. what this did is make it so when i pressed the buttons sometimes the game and ui would react however the actual words would never change and would only say textblock an example being the first image. Here the left and right buttons never changed the text on screen but so you would never know what you are selecting.
+                &emsp;&emsp; During April, the team worked towards releasing a minimum viable product for publishers. Shortly after this, we plan to release trailers and start posting on social media about the game to garner more wishlist entries.
+
+                After the MVP release, we will also work towards improving the Steam page for the game.
                 <br />
                 <br />
            <br />
 
             </section>
-            <section class=" text-box second-title span-four no-outline">Solutions</section>
- <section class="text-box span-four no-outline">
-
-                &emsp;&emsp;
-                This issue was found by looking through my code for the settings and checking the parameters of the functions i needed to call in order to make the buttons properly work. When I did this I realized that my issue was that I made the functions return an "Fstring" however the type that Textblock->settext needs is of Type "Ftext". It is impossible to convert Fstring to Ftext without casting so the way I was doing it at first made it so the text was never being set as it was the wrong type. I fixed this issue by making a setter for  the different functions, making a setter made it so that I could now better manipulate the textboxes however I wanted without remaking the functions or casting every variable which then led the Ui to look like how it does in The second picture. <br />
-
-            </section>
             <section class="section-divider no-line small"></section>
                         <section class="section-divider"></section>
-   <section class="DisplayGrid Style1 span-four span-two-vert">
-                                            <section class="span-four"><img src="../assets/images/DH26-1.png"></section>
-                                            <section class="span-one"><img src="../assets/images/DH26-2.png"></section>
 
-            </section>
 
 
             <section class="section-divider no-line large"></section>
